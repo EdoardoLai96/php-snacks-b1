@@ -5,21 +5,23 @@
 
 $nameCheck = $_GET["name"];
 
-$emailCheck = $_GET["email"];
+$emailCheckDot = $_GET["email"];
+
+$emailCheckAt = $_GET["email"];
 
 $ageCheck = $_GET["age"];
 
 if(!empty($_GET["name"]) || !empty($_GET["email"]) || !empty($_GET["age"])){
 
-    if(strlen($nameCheck) >= 3 && strpos($emailCheck , '.') !== false && is_numeric($ageCheck)){
-        echo "access granted";
+    if(strlen($nameCheck) >= 3 && strpos($emailCheckDot , '.') !== false && strpos($emailCheckAt , '@') !== false && is_numeric($ageCheck)){
+        echo "access granted <br/>";
     }else{
-        echo "access denied";
+        echo "access denied <br/>";
     };
 
     
 }else{
-    echo "Inserire prima i dati";
+    echo "Inserire prima i dati <br/>";
 }
 
 
@@ -29,10 +31,8 @@ $paragrafoLungo = "The Office is an American mockumentary sitcom television seri
 
 $paragrafiCorti = explode(".", $paragrafoLungo);
 
-var_dump($paragrafiCorti);
 
-$c= 0;
 
-for($c; $c < count($paragrafiCorti); $c++){
+for($c=0; $c < count($paragrafiCorti); $c++){
     echo $paragrafiCorti[$c] . "." . "<br/>";
 }
