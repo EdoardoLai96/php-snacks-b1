@@ -3,13 +3,16 @@
 
 ## SNACK 2
 
+
+
+if(!empty($_GET["name"]) || !empty($_GET["email"]) || !empty($_GET["age"])){
+
+
 $nameCheck = $_GET["name"];
 
 $emailCheck = $_GET["email"];
 
 $ageCheck = $_GET["age"];
-
-if(!empty($_GET["name"]) || !empty($_GET["email"]) || !empty($_GET["age"])){
 
     if(strlen($nameCheck) >= 3 && strpos($emailCheck , '.') !== false && strpos($emailCheck , '@') !== false && is_numeric($ageCheck)){
         echo "access granted <br/>";
