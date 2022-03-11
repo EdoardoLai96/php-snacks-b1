@@ -5,15 +5,13 @@
 
 $nameCheck = $_GET["name"];
 
-$emailCheckDot = $_GET["email"];
-
-$emailCheckAt = $_GET["email"];
+$emailCheck = $_GET["email"];
 
 $ageCheck = $_GET["age"];
 
 if(!empty($_GET["name"]) || !empty($_GET["email"]) || !empty($_GET["age"])){
 
-    if(strlen($nameCheck) >= 3 && strpos($emailCheckDot , '.') !== false && strpos($emailCheckAt , '@') !== false && is_numeric($ageCheck)){
+    if(strlen($nameCheck) >= 3 && strpos($emailCheck , '.') !== false && strpos($emailCheck , '@') !== false && is_numeric($ageCheck)){
         echo "access granted <br/>";
     }else{
         echo "access denied <br/>";
